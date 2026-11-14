@@ -1,0 +1,272 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body><!--hemeroteca--><a href="../index.html" style="position:fixed;left:14px;bottom:14px;z-index:2147483647;background:#2f5d9d;color:#fff;font:600 13px/1 system-ui,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)">← Todas las revistas</a>
+<title>Fichas Endodoncia Semanal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+<style>
+/* Layout: lista de fichas por fuente; cada ficha = 6 tarjetas numeradas */
+:root{
+  --bg:#f5f7fa; --card:#ffffff; --fg:#14202e; --muted:#5a6878; --line:#d9e0e8;
+  --blue:#005BBB; --teal:#007F80; --green:#1a7f4b; --amber:#b86e00; --red:#b3261e;
+  --blue-soft:#e6f0fb; --green-soft:#e5f4ec; --amber-soft:#fdf1dc;
+  --serif:'Newsreader',Georgia,serif; --sans:'IBM Plex Sans',system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e141b; --card:#161e28; --fg:#e6ecf3; --muted:#9aa8b8; --line:#2a3646;
+  --blue:#5aa2ee; --teal:#3fb8b9; --green:#4cc283; --amber:#e8a444; --red:#f2776f;
+  --blue-soft:#14263b; --green-soft:#12281d; --amber-soft:#2e2312; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e141b; --card:#161e28; --fg:#e6ecf3; --muted:#9aa8b8; --line:#2a3646;
+  --blue:#5aa2ee; --teal:#3fb8b9; --green:#4cc283; --amber:#e8a444; --red:#f2776f;
+  --blue-soft:#14263b; --green-soft:#12281d; --amber-soft:#2e2312; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15px;line-height:1.5;
+  padding-block:24px 48px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:820px;margin:0 auto}
+h1{font-family:var(--serif);font-size:2rem;margin:0 0 4px;text-wrap:balance}
+.sub{color:var(--muted);margin:0 0 20px}
+nav{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+nav a{border:1px solid var(--line);background:var(--card);color:var(--blue);padding:6px 12px;border-radius:999px;text-decoration:none;font-weight:500;font-size:.9rem}
+nav a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+h2.src{font-family:var(--serif);font-size:1.5rem;margin:36px 0 4px;padding-top:12px;border-top:2px solid var(--blue);text-wrap:balance}
+.srcnote{color:var(--muted);margin:0 0 16px;font-size:.9rem}
+details.ficha{margin-bottom:14px}
+details.ficha>summary{cursor:pointer;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+details.ficha>summary::-webkit-details-marker{display:none}
+details.ficha[open]>summary{border-color:var(--blue)}
+.chev{color:var(--blue);font-weight:600;transition:transform .15s}
+details[open]>summary .chev{transform:rotate(90deg)}
+.stitle{min-width:0}
+.stitle b{display:block;font-weight:600}
+.stitle span{color:var(--muted);font-size:.85rem}
+.body{display:grid;gap:18px;padding-top:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
+.hd{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.n{flex:none;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:.8rem;font-weight:600}
+.hd h3{margin:0;font-size:.95rem;font-weight:600;letter-spacing:.02em;text-transform:uppercase;color:var(--muted)}
+.q{font-family:var(--serif);font-size:1.25rem;line-height:1.3;margin:0 0 6px;text-wrap:balance}
+.meta{color:var(--muted);font-size:.88rem}
+.pico{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pico div{background:var(--blue-soft);border-radius:8px;padding:10px;min-width:0}
+.pico small{display:block;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em}
+.find{border:1px solid var(--line);border-left-width:5px;border-radius:8px;padding:12px}
+.find.ok{border-left-color:var(--green);background:var(--green-soft)}
+.find.mid{border-left-color:var(--amber);background:var(--amber-soft)}
+.find p{margin:0 0 4px;font-family:var(--serif);font-size:1.15rem;line-height:1.35}
+.find small{color:var(--muted)}
+.bars{display:grid;gap:8px;margin:4px 0 10px}
+.bar{display:grid;grid-template-columns:minmax(90px,38%) 1fr 56px;gap:8px;align-items:center;font-size:.85rem}
+.bar .t{height:14px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar .t i{display:block;height:100%;background:var(--teal);border-radius:4px}
+.bar .v{text-align:right;font-variant-numeric:tabular-nums;font-weight:500}
+.lvl{font-size:.9rem}
+.tag{display:inline-block;font-size:.72rem;border:1px solid var(--line);border-radius:4px;padding:1px 6px;color:var(--muted);margin-right:4px}
+.verd{border:2px solid var(--blue);background:var(--card)}
+.verd .hd h3{color:var(--blue)}
+.panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.panels div{background:var(--blue-soft);border-radius:8px;padding:10px;min-width:0}
+.panels b{display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em;color:var(--blue);margin-bottom:2px}
+.quiz label{display:block;padding:8px 10px;border:1px solid var(--line);border-radius:8px;margin-top:6px;cursor:pointer}
+.quiz input{margin-right:8px}
+.quiz button{margin-top:10px;background:var(--blue);color:#fff;border:0;border-radius:8px;padding:8px 16px;font:inherit;font-weight:500;cursor:pointer}
+.fb{margin-top:8px;font-size:.9rem}
+.fb.good{color:var(--green)} .fb.bad{color:var(--red)}
+.foot{margin-top:10px;font-size:.82rem;color:var(--muted)}
+.foot a{color:var(--blue)}
+.src-foot{margin-top:40px;color:var(--muted);font-size:.85rem}
+.src-foot a{color:var(--blue)}
+@media(max-width:480px){.pico{grid-template-columns:1fr}.bar{grid-template-columns:1fr 1fr 52px}}
+</style>
+<div class="wrap">
+<h1>Fichas de endodoncia · semana del 2 de noviembre de 2026</h1>
+<p class="sub">Resumen semanal de Journal of Endodontics, International Endodontic Journal y PubMed. Según PubMed, basado solo en el abstract salvo que se indique.</p>
+<nav id="nav"></nav>
+<div id="out"></div>
+<p class="src-foot">Fuente: <a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a>. Cada ficha enlaza su DOI. Las etiquetas "(interpretación)" y "Valoración propia, no publicada" marcan lo que no proviene de los autores. Se ha usado solo el abstract: la calidad metodológica completa requiere el PDF.</p>
+</div>
+<script>
+const SECTIONS=[
+{id:'joe',title:'Journal of Endodontics',note:'Artículos publicados entre el 13 y el 30 de octubre de 2026 (5 de 33 del mes).',items:[
+{
+ t:'¿Qué factores del tratamiento se asocian a lesiones periapicales tras el tratamiento de conductos en todo el mundo?',
+ m:'Estudio transversal multinacional (CBCT) · J Endod 2026 · 15.981 dientes, 6.688 pacientes, 54 países',
+ a:'Martins JNR … Versiani MA', doi:'10.1016/j.joen.2026.10.011',
+ pico:[['Muestra','CBCT previos de dientes con endodoncia (54 países)'],['Comparación','Conducto perdido, longitud de obturación, tipo de restauración'],['Variable','Radiolucidez periapical postratamiento'],['Análisis','Meta-análisis de efectos aleatorios y GEE']],
+ find:['Un 43,7 % de los dientes tratados tenía radiolucidez periapical; los conductos perdidos casi triplican las probabilidades (OR 2,91).','ok','Variación geográfica de 31,4 % (Oceanía) a 62,3 % (África).'],
+ bars:{title:'Odds ratio de radiolucidez postratamiento',max:3.5,unit:'',rows:[['Conducto perdido',2.91],['Obturación corta',2.83],['Sobreobturación',1.74],['Sin corona vs corona',1.21]]},
+ lvl:'Observacional transversal, sin seguimiento: asocia, no demuestra causa. Evaluación de calidad de los autores: No puedo confirmar.',
+ v:['Conductos perdidos y obturación corta son los factores más fuertes; la restauración pesa menos.','(interpretación) Refuerza buscar el conducto extra con CBCT/microscopio y controlar la longitud de obturación.','Leer completo si enseñas retratamientos; es citable por su tamaño.'],
+ qz:['¿Qué factor mostró la asociación más alta con la radiolucidez?',['Conducto perdido (OR 2,91)','Tipo de corona (OR 1,21)','Sobreobturación (OR 1,74)'],0,'El conducto perdido: OR 2,91 (IC 95 % 2,60-3,26).']
+},
+{
+ t:'¿Importa ampliar más el foramen apical en molares inferiores para la curación periapical estricta?',
+ m:'Revisión sistemática con metaanálisis exploratorio · J Endod 2026 · 5 estudios',
+ a:'Weihao S … Shiba H', doi:'10.1016/j.joen.2026.10.008',
+ pico:[['Muestra','Molares inferiores con tratamiento primario'],['Comparación','Ampliación +3 vs +2; conicidad'],['Control','Calibre apical final ≤ #30 (series de un brazo)'],['Variable','Curación periapical estricta (PAI ≤ 2 y sin síntomas)']],
+ find:['La ampliación +3 mostró más curación estricta que +2 (RR 0,78; IC 95 % 0,67-0,91), pero con solo dos ensayos.','mid','La conicidad no se pudo establecer como factor independiente (RR 0,90; IC 0,70-1,15).'],
+ bars:{title:'Curación periapical estricta (agrupada, series de un brazo)',max:100,unit:'%',rows:[['Estimación agrupada',72.9],['Límite inferior IC 95 %',60.8],['Límite superior IC 95 %',83.5]]},
+ lvl:'Revisión con solo 5 estudios, 2 ensayos comparativos. AMSTAR 2 de los autores: No puedo confirmar.',
+ v:['Evidencia aleatorizada limitada a favor de +3 frente a +2.','(interpretación) Apoya no quedarse corto en el calibre apical en molares inferiores, sin dar un número mágico.','Citar con cautela; leer solo resultados.'],
+ qz:['¿Qué concluye sobre la conicidad?',['Mejora la curación por sí sola','Incierta como factor independiente','Empeora la curación'],1,'RR 0,90 (IC 0,70-1,15, p = 0,39): no concluyente.']
+},
+{
+ t:'¿Conviene retirar un instrumento fracturado o conservarlo para preservar el diente?',
+ m:'Revisión narrativa · J Endod 2026 · sin n (no aplica)',
+ a:'Elashiry MM … Tay F', doi:'10.1016/j.joen.2026.10.013',
+ pico:[['Tema','Instrumento separado'],['Opciones','Retirada, bypass, retención, cirugía'],['Compara','Resistencia a fractura, curación, retención dentaria'],['Método','Síntesis de estudios clínicos, revisiones y laboratorio']],
+ find:['Ninguna estrategia ha demostrado superioridad en retención a largo plazo en estudios comparativos controlados.','mid','Sin enfermedad apical, un fragmento retenido no se asocia de forma consistente a peor curación.'],
+ bars:null,
+ lvl:'Revisión narrativa: no hay gráfica de resultados porque el abstract no aporta cifras. Nivel de evidencia clínica descrito por los autores como principalmente observacional.',
+ v:['Fragmento separado no equivale a indicación automática de retirada; pesa más el estado previo de la enfermedad.','(interpretación) Decide por posición del fragmento, curvatura, infección y dentina residual.','Leer completo: útil para criterio clínico, no para cifras.'],
+ qz:['Según la revisión, ¿qué pesa más como pronóstico?',['El estado de enfermedad preoperatorio','La retirada completa siempre','El tipo de lima'],0,'La enfermedad preoperatoria es un factor pronóstico más fuerte que el fragmento retenido.']
+},
+{
+ t:'¿Basta con analgesia a demanda tras tratar un diente con periodontitis apical sintomática?',
+ m:'Ensayo clínico aleatorizado · J Endod 2026 · 172 incluidos, 126 completaron',
+ a:'Malueg M … Chandrasena S', doi:'10.1016/j.joen.2026.10.006',
+ pico:[['Pacientes','Urgencias con periodontitis apical sintomática'],['Comparación','Ibuprofeno + paracetamol pautado vs a demanda'],['Seguimiento','3 días con diario de dolor'],['Mide','Dolor y consumo de medicación']],
+ find:['Con pauta fija se consumió unas dos veces más medicación sin diferencia significativa en el dolor.','ok','Sirve como base para una pauta centrada en el paciente.'],
+ bars:{title:'Pacientes del ensayo',max:180,unit:'',rows:[['Incluidos',172],['Completaron',126],['Pauta fija (completaron)',58],['A demanda (completaron)',68]]},
+ lvl:'Se perdieron 46 de 172 (27 %, cálculo propio). RoB 2: Valoración propia, no publicada: riesgo de sesgo por desgaste probablemente relevante.',
+ v:['A demanda controla el dolor igual con menos fármaco.','(interpretación) Se puede pautar a demanda en urgencias de este tipo, vigilando pacientes con dolor alto.','Citar; leer métodos si valoras el desgaste.'],
+ qz:['¿Qué diferencia hubo entre pautas?',['Más dolor en la pauta fija','Más consumo con pauta fija, mismo dolor','Menos consumo con pauta fija'],1,'La pauta fija consumió ~el doble sin diferencia significativa de dolor.']
+},
+{
+ t:'¿Cómo afectan GentleWave, láser y ultrasonidos a la dentina y a la penetración del sellador tras instrumentación mínimamente invasiva?',
+ m:'Estudio ex vivo · J Endod 2026 · 100 premolares inferiores',
+ a:'Scardini IL … Teixeira FB', doi:'10.1016/j.joen.2026.10.009',
+ pico:[['Muestra','100 premolares inferiores extraídos'],['Grupos','Ultrasonidos, láser (LAI), GentleWave'],['Control','Grupo control negativo; técnica convencional'],['Mide','Barrillo, erosión, penetración del sellador']],
+ find:['En conductos mínimamente invasivos, GentleWave y láser lograron mayor penetración apical del sellador que ultrasonidos.','mid','Los protocolos difieren en volumen y tiempo: no se atribuye a la tecnología.'],
+ bars:{title:'Imágenes con erosión dentinaria (de 120 en total)',max:12,unit:'',rows:[['Ultrasonidos',10],['Láser',5],['GentleWave',0]]},
+ lvl:'Laboratorio: evidencia in vitro (PRILE 2021: No puedo confirmar). Los autores advierten del sesgo por protocolos no equiparables.',
+ v:['Sin erosión con GentleWave en estas condiciones; mejor penetración apical con GW y láser.','(interpretación) Señal interesante para irrigación y selladores biocerámicos, sin traslado clínico directo.','Leer solo discusión y limitaciones.'],
+ qz:['¿Por qué no se puede atribuir el resultado a la tecnología?',['Muestra insuficiente','Protocolos con volumen, tiempo y secuencia distintos','No hubo control'],1,'Los propios autores lo indican en el abstract.']
+}
+]},
+{id:'iej',title:'International Endodontic Journal',note:'Artículos del 20 al 30 de octubre de 2026 (5 de 39 del mes).',items:[
+{
+ t:'¿Con qué frecuencia necesita endodoncia un diente con restauración extensa y qué riesgo de extracción hay después?',
+ m:'Cohorte de registro sueco · Int Endod J 2026 · 160.393 pacientes, 271.368 dientes, hasta 10 años',
+ a:'Olander J … Wigsten E', doi:'10.1111/iej.70302',
+ pico:[['Muestra','Dientes sin endodoncia previa con restauración mayor'],['Comparación','Directa vs indirecta; edad; tipo de diente'],['Control','Dientes sin evento endodóntico'],['Mide','Endodoncia posterior y extracción']],
+ find:['Solo el 5,7 % de los dientes restaurados recibió endodoncia, casi el 30 % en el primer año.','ok','Tras la endodoncia, el riesgo de extracción fue 6,41 veces mayor (HR, IC 6,14-6,69).'],
+ bars:{title:'Porcentaje de dientes',max:30,unit:'%',rows:[['Con endodoncia posterior',5.7],['Extraídos',6.6],['Endodoncias dentro del 1.er año',30],['Endodonciados luego extraídos',25.9]]},
+ lvl:'Cohorte de registro grande; seguimiento mediano de 13,5 meses en dientes sin evento y pérdidas diferenciales. ROBINS-I: Valoración propia, no publicada: posible sesgo por pérdida de seguimiento.',
+ v:['La mayoría de restauraciones extensas no necesita endodoncia; cuando la necesita, suele ser pronto.','(interpretación) Útil para informar al paciente sobre el riesgo tras restauraciones extensas.','Citar para datos de incidencia; leer completo.'],
+ qz:['¿Qué porcentaje de dientes restaurados recibió endodoncia?',['5,7 %','25,9 %','30 %'],0,'El 5,7 % (15.352 dientes); 25,9 % es el de endodonciados extraídos después.']
+},
+{
+ t:'¿Puede ChatGPT sustituir a expertos al evaluar la calidad de revisiones sistemáticas en endodoncia?',
+ m:'Estudio metodológico de concordancia · Int Endod J 2026 · 100 revisiones con metaanálisis',
+ a:'Nagendrababu V … Dummer PMH', doi:'10.1111/iej.70297',
+ pico:[['Muestra','100 revisiones sistemáticas 2021-2024'],['Comparación','ChatGPT-5.5 vs consenso humano (AMSTAR 2)'],['Control','Tres expertos'],['Mide','Concordancia (kappa)']],
+ find:['El acuerdo en confianza global fue del 52 % (kappa ponderado 0,182): no sirve como evaluador independiente.','mid','ChatGPT clasificó más revisiones como críticamente bajas.'],
+ bars:{title:'Revisiones con confianza "críticamente baja" (de 100)',max:100,unit:'',rows:[['Consenso humano',47],['ChatGPT-5.5',85]]},
+ lvl:'Estudio de concordancia propio de metodología; sus resultados son consistentes entre cuentas (85 de 100 idénticas), pero eso no implica acierto.',
+ v:['La IA es más severa y poco concordante con los humanos.','(interpretación) No usarla para valorar artículos sin revisión ítem a ítem.','Citar si hablas de IA y lectura crítica.'],
+ qz:['¿Cuál fue el acuerdo en confianza global (criterio principal)?',['52 %','83 %','100 %'],0,'52 %; el 83 % es con el criterio alternativo.']
+},
+{
+ t:'¿Los datos clínicos disponibles reflejan el grado de inflamación de una periodontitis apical en dientes ya obturados?',
+ m:'Estudio transversal con biopsias · Int Endod J 2026 · 109 biopsias de 109 pacientes',
+ a:'Olsson J … Ljunggren A', doi:'10.1111/iej.70299',
+ pico:[['Muestra','109 dientes obturados con periodontitis apical'],['Comparación','Asintomáticos vs sintomáticos'],['Control','Grupos por edad y estado de obturación'],['Mide','Inflamación histológica']],
+ find:['Solo los síntomas se relacionaron con más inflamación (p = 0,023); datos demográficos, historia y radiología no.','mid','Precaución al estimar la carga inflamatoria en lesiones asintomáticas.'],
+ bars:null,
+ lvl:'Transversal con histología; la variable principal tiene una sola diferencia significativa tras corregir por pruebas múltiples. No hay gráfica numérica útil en el abstract.',
+ v:['Los síntomas orientan, la radiografía y la historia no.','(interpretación) Una lesión asintomática no es necesariamente "tranquila" en histología.','Leer solo resultados.'],
+ qz:['¿Qué factor sí reflejó la inflamación?',['Presencia de síntomas','Edad de la obturación','Tamaño radiográfico'],0,'Sintomáticos vs asintomáticos: p = 0,023.']
+},
+{
+ t:'¿Qué saben los estudiantes de odontología sobre el uso de antibióticos en endodoncia?',
+ m:'Encuesta en línea · Int Endod J 2026 · 10 facultades',
+ a:'Nagendrababu V … Duncan HF', doi:'10.1111/iej.70296',
+ pico:[['Muestra','Estudiantes de último curso y de posgrado'],['Comparación','Grado vs posgrado'],['Control','No aplica'],['Mide','Conocimiento y guías ESE/AAE']],
+ find:['Conocen las guías ESE más los de posgrado (82,6 %) que los de grado (49,1 %); la conciencia de la guía ESE se asoció a respuestas correctas (OR 1,39).','mid','Variabilidad en alergia a penicilina, dosis de carga y profilaxis.'],
+ bars:{title:'Conocimiento de la guía ESE / AAE (grado vs posgrado)',max:100,unit:'%',rows:[['ESE · grado',49.1],['ESE · posgrado',82.6],['AAE · grado',70.4],['AAE · posgrado',91.7]]},
+ lvl:'Encuesta con respuesta baja en grado (37,3 %) y alta en posgrado (87,9 %): riesgo de sesgo de no respuesta (interpretación).',
+ v:['Posgrado conoce más las guías; la formación en antibióticos es mejorable.','(interpretación) Buen apoyo para docencia en uso prudente de antibióticos.','Citar para docencia.'],
+ qz:['¿Qué porcentaje de posgrado conoce la guía ESE?',['49,1 %','82,6 %','91,7 %'],1,'82,6 %; 91,7 % es para la guía AAE.']
+},
+{
+ t:'¿Puede el péptido L803-mts favorecer la dentinogénesis reparadora en terapia pulpar vital?',
+ m:'Estudio in vitro e in vivo (rata) · Int Endod J 2026',
+ a:'Rajasekar V … Yiu CKY', doi:'10.1111/iej.70298',
+ pico:[['Muestra','Células madre pulpares, co-cultivo con macrófagos, modelo en rata'],['Comparación','L803-mts vs MTA'],['Control','Condiciones inflamatorias con LPS'],['Mide','Mineralización, marcadores, densidad mineral']],
+ find:['En rata, la densidad mineral fue comparable a MTA (1,17 vs 1,32), con menor volumen mineral (0,03 vs 0,06).','mid','Aumentó la mineralización y redujo citocinas proinflamatorias in vitro.'],
+ bars:null,
+ lvl:'Laboratorio y animal: PRIASE 2021: No puedo confirmar. Las unidades del abstract están incompletas, por lo que no se grafican.',
+ v:['Candidato biológico prometedor a bioactivo en pulpa vital.','(interpretación) Lejos de la clínica: no hay datos en humanos.','Citar solo como línea de investigación.'],
+ qz:['¿Cómo fue la densidad mineral frente a MTA?',['Significativamente mayor','Comparable (p > 0,05)','Mucho menor'],1,'1,17 vs 1,32, sin diferencia significativa.']
+}
+]},
+{id:'pm',title:'PubMed · endodoncia relevante',note:'Otras revistas, publicadas o indexadas del 19 de octubre al 2 de noviembre de 2026 (194 resultados; 3 seleccionados por relevancia clínica).',items:[
+{
+ t:'¿Cuántos conductos y qué configuraciones tienen los dientes mandibulares en población saudí?',
+ m:'Estudio transversal retrospectivo (CBCT) · Int J Dent 2026 · 1.104 dientes, 150 pacientes',
+ a:'Almalaq AA … Madfa AA', doi:'10.1155/ijod/8277155',
+ pico:[['Muestra','150 CBCT de pacientes de Hail'],['Clasificación','Vertucci y Ahmed-Dummer; Fan para C'],['Control','No aplica'],['Mide','Raíces, conductos, conductos en C']],
+ find:['El 61,2 % tuvo un solo conducto; los conductos en C aparecieron en el 2,2 % (más en primeros premolares, 7,2 %).','mid','Subraya la utilidad del CBCT preoperatorio en premolares y molares.'],
+ bars:{title:'Porcentaje de dientes',max:100,unit:'%',rows:[['Una raíz',83.2],['Dos raíces',16.6],['Conducto único',61.2],['Conductos en C',2.2]]},
+ lvl:'Descriptivo en una población; extrapolable con cautela. Calidad de comunicación: No puedo confirmar.',
+ v:['Datos anatómicos de apoyo en población saudí.','(interpretación) Útil como referencia comparativa para tu población.','Citar para anatomía.'],
+ qz:['¿Qué porcentaje tuvo conductos en C?',['2,2 %','7,2 %','16,6 %'],0,'2,2 % global; 7,2 % es en primeros premolares.']
+},
+{
+ t:'¿Qué papel tiene la matriz extracelular en la regeneración de pulpa y dentina?',
+ m:'Revisión · Int J Oral Sci 2026 · sin n',
+ a:'Yan W … Fan Z', doi:'10.1038/s41368-026-00472-1',
+ pico:[['Tema','Matriz extracelular pulpar'],['Compara','Andamios derivados de matriz según fuente'],['Contexto','Pulpitis y endodoncia regenerativa'],['Método','Revisión; AMSTAR 2: No puedo confirmar']],
+ find:['La matriz extracelular se propone como eje de la regeneración pulpodentinaria, con retos de traslación aún abiertos.','mid','Identifica lagunas y futuras biomateriales inmunomoduladores.'],
+ bars:null,
+ lvl:'Revisión sin cifras en el abstract. Nivel de evidencia: narrativo.',
+ v:['Marco teórico para endodoncia regenerativa.','(interpretación) De valor docente, no cambia la práctica actual.','Leer solo si te interesa la regeneración.'],
+ qz:['¿Cuál es el eje propuesto?',['La matriz extracelular','El sellador','El láser'],0,'La matriz extracelular como núcleo de la regeneración.']
+},
+{
+ t:'¿Pueden hipoclorito de calcio, octenidina o N-acetilcisteína sustituir al hipoclorito de sodio como irrigantes?',
+ m:'Estudio in vitro · Biofouling 2026',
+ a:'Chávez-Andrade GM … Guerreiro-Tanomaru JM', doi:'10.1080/08927014.2026.2754847',
+ pico:[['Muestra','Cultivos celulares, pulpa y biofilms'],['Comparación','Ca(OCl)₂, OCT, Octenisept, NAC vs NaOCl'],['Control','NaOCl'],['Mide','Citotoxicidad, disolución, biofilm, TNF-α']],
+ find:['El NaOCl fue el más citotóxico; el hipoclorito de calcio fue el más eficaz contra biofilms entre los nuevos.','mid','Todas las soluciones inhibieron la expresión de TNF-α a las 12 h.'],
+ bars:null,
+ lvl:'Laboratorio: PRILE 2021: No puedo confirmar. El abstract no ofrece cifras utilizables.',
+ v:['Alternativas con menor citotoxicidad y actividad antibiofilm.','(interpretación) Solo laboratorio; sin traslado clínico.','Citar como línea de irrigación.'],
+ qz:['¿Qué irrigante fue más citotóxico?',['NaOCl','NAC','Octenidina'],0,'El NaOCl fue el más citotóxico, seguido del hipoclorito de calcio.']
+}
+]}
+];
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const fmt=n=>String(n).replace('.',',');
+let uid=0;
+function bars(b){
+ if(!b)return '';
+ return '<p class="meta">'+esc(b.title)+'</p><div class="bars">'+b.rows.map(r=>`<div class="bar"><span>${esc(r[0])}</span><span class="t"><i style="width:${Math.min(100,r[1]/b.max*100)}%"></i></span><span class="v">${fmt(r[1])}${b.unit}</span></div>`).join('')+'</div>';
+}
+function ficha(f){
+ const id='q'+(uid++);
+ const fnd=f.find;
+ const opts=f.qz[1].map((o,i)=>`<label><input type="radio" name="${id}" value="${i}">${esc(o)}</label>`).join('');
+ return `<details class="ficha"><summary><span class="chev">›</span><span class="stitle"><b>${esc(f.t)}</b><span>${esc(f.m)}</span></span></summary>
+<div class="body">
+<div class="card"><div class="hd"><span class="n">1</span><h3>Qué artículo es</h3></div><p class="q">${esc(f.t)}</p><p class="meta">${esc(f.m)}<br>${esc(f.a)}</p></div>
+<div class="card"><div class="hd"><span class="n">2</span><h3>Qué pregunta se hace</h3></div><div class="pico">${f.pico.map(p=>`<div><small>${esc(p[0])}</small>${esc(p[1])}</div>`).join('')}</div></div>
+<div class="card"><div class="hd"><span class="n">3</span><h3>Qué encuentra</h3></div><div class="find ${fnd[1]}"><p>${esc(fnd[0])}</p><small>${esc(fnd[2])}</small></div></div>
+<div class="card"><div class="hd"><span class="n">4</span><h3>Cuánto fiarse</h3></div>${bars(f.bars)}<p class="lvl">${esc(f.lvl)}</p></div>
+<div class="card verd"><div class="hd"><span class="n">5</span><h3>Veredicto clínico</h3></div><div class="panels"><div><b>Qué dice</b>${esc(f.v[0])}</div><div><b>Qué cambia en clínica</b>${esc(f.v[1])}</div><div><b>¿Leer o citar?</b>${esc(f.v[2])}</div></div></div>
+<div class="card quiz" data-ans="${f.qz[2]}" data-exp="${esc(f.qz[3])}"><div class="hd"><span class="n">6</span><h3>Repaso</h3></div><p style="margin:0 0 4px"><b>${esc(f.qz[0])}</b></p>${opts}<button type="button">Comprobar</button><div class="fb" role="status"></div></div>
+<p class="foot">Fuente: PubMed · <a href="https://doi.org/${f.doi}" target="_blank" rel="noopener">doi.org/${f.doi}</a></p>
+</div></details>`;
+}
+document.getElementById('nav').innerHTML=SECTIONS.map(s=>`<a href="#${s.id}">${esc(s.title)}</a>`).join('');
+document.getElementById('out').innerHTML=SECTIONS.map(s=>`<h2 class="src" id="${s.id}">${esc(s.title)}</h2><p class="srcnote">${esc(s.note)}</p>`+s.items.map(ficha).join('')).join('');
+document.querySelectorAll('.quiz').forEach(q=>{
+ q.querySelector('button').addEventListener('click',()=>{
+  const fb=q.querySelector('.fb'),sel=q.querySelector('input:checked');
+  if(!sel){fb.className='fb bad';fb.textContent='Elige una respuesta antes de comprobar.';return;}
+  const ok=sel.value===q.dataset.ans;
+  fb.className='fb '+(ok?'good':'bad');
+  fb.textContent=(ok?'Correcto. ':'No exacto. ')+q.dataset.exp;
+ });
+});
+</script>
+
+</body></html>

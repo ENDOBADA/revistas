@@ -1,0 +1,260 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body><!--hemeroteca--><a href="../index.html" style="position:fixed;left:14px;bottom:14px;z-index:2147483647;background:#2f5d9d;color:#fff;font:600 13px/1 system-ui,sans-serif;padding:10px 14px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.25)">← Todas las revistas</a>
+<title>Revista IA — semana del 26 de octubre de 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: bold cover + "30 segundos" strip, then bento grids per section; short cards = tag, headline, one line, "para ti", source */
+/* Single dark look by choice: deep night base, slow aurora glow, glass cards */
+:root{
+  --bg:#06080f; --card:rgba(20,26,40,.62); --ink:#eef1f8; --muted:#a3acc0; --line:rgba(255,255,255,.09);
+  --accent:#7f8cff; --hot:#ff7a5c; --deep:#0c111d;
+  --c1:#7f8cff; --c2:#3fe0c5; --c3:#ff6f9c; --c4:#b39bff;
+  color-scheme:dark;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Figtree","Segoe UI",system-ui,sans-serif;
+}
+body::after{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;
+  background:radial-gradient(40% 35% at 20% 20%,rgba(127,140,255,.28),transparent 70%),
+    radial-gradient(35% 30% at 80% 30%,rgba(255,111,156,.20),transparent 70%),
+    radial-gradient(45% 40% at 60% 85%,rgba(63,224,197,.16),transparent 70%);
+  filter:blur(20px);animation:aurora 22s ease-in-out infinite alternate}
+@keyframes aurora{0%{transform:translate(0,0) rotate(0deg) scale(1)}50%{transform:translate(4%,-3%) rotate(8deg) scale(1.08)}100%{transform:translate(-4%,3%) rotate(-6deg) scale(1)}}
+@keyframes shift{0%{background-position:0% 50%}100%{background-position:200% 50%}}
+@keyframes rise{from{transform:translateY(14px)}to{transform:none}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,122,92,.5)}50%{box-shadow:0 0 0 8px rgba(255,122,92,0)}}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 56px}
+.wrap{max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance}
+.tag{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+/* Cover */
+.cover{display:grid;gap:18px;padding-top:8px}
+.cover .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.cover h1{font-size:clamp(56px,13vw,150px);font-weight:900;font-stretch:72%;line-height:.86;letter-spacing:-.02em;text-transform:uppercase}
+.cover h1 em{font-style:normal;background:linear-gradient(90deg,var(--c1),var(--c3),var(--c2),var(--c1));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shift 6s linear infinite}
+.cover .sub{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.pill{font-weight:600;font-size:14px;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(10px)}
+.pill.ink{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* 30 segundos */
+.flash{background:linear-gradient(135deg,rgba(54,64,160,.55),rgba(120,40,110,.45));border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--ink);border-radius:20px;padding:24px clamp(18px,3vw,32px);display:grid;gap:16px}
+.flash .tag{color:var(--ink);opacity:.75}
+.flash .tag::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--hot);margin-right:8px;vertical-align:1px;animation:pulse 2s infinite}
+.flash ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px}
+.flash ol{align-items:stretch}
+.flash li{display:flex}
+.blk{flex:1;display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:16px;text-decoration:none;color:var(--ink);
+  background:rgba(255,255,255,.06);border:1px solid var(--line);transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.blk:hover{transform:translateY(-3px);background:rgba(255,255,255,.11);border-color:color-mix(in srgb,var(--c) 70%,transparent)}
+.blk .num{font-family:var(--display);font-weight:900;font-size:40px;line-height:.9;color:var(--hot)}
+.blk .hl{font-family:var(--display);font-weight:700;font-size:19px;line-height:1.2;flex:1}
+.blk .go{display:flex;justify-content:space-between;align-items:center;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c)}
+.blk .go::after{content:"→";font-size:18px;transition:transform .2s ease}
+.blk:hover .go::after{transform:translateX(4px)}
+.card{scroll-margin-top:24px}
+.card:target{border-color:var(--c);box-shadow:0 0 0 2px color-mix(in srgb,var(--c) 60%,transparent)}
+.opinion{display:flex;gap:12px;align-items:baseline;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px;font-size:16px}
+.opinion span{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--hot);color:var(--deep);padding:3px 8px;border-radius:4px}
+.opinion p{margin:0;flex:1 1 300px;opacity:.9}
+
+/* Sections */
+section{display:grid;gap:16px}
+.sh{display:flex;align-items:center;gap:12px}
+.sh i{width:14px;height:14px;border-radius:4px;background:var(--c)}
+.sh h2{font-size:clamp(28px,4.5vw,44px);font-weight:800;font-stretch:80%;text-transform:uppercase;letter-spacing:-.01em}
+.bento{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0;
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);animation:rise .6s ease-out both;
+  transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--c) 60%,transparent);box-shadow:0 12px 40px -12px color-mix(in srgb,var(--c) 55%,transparent)}
+.bento .card:nth-child(2){animation-delay:.08s}.bento .card:nth-child(3){animation-delay:.16s}.bento .card:nth-child(4){animation-delay:.24s}
+.stat{text-shadow:0 0 28px color-mix(in srgb,var(--c) 45%,transparent)}
+@media (prefers-reduced-motion:reduce){*,*::after,*::before{animation:none!important;transition:none!important}.card:hover{transform:none}}
+.card .row{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center}
+.chip{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:color-mix(in srgb,var(--c) 14%,transparent);color:var(--c)}
+.chip.warn{background:color-mix(in srgb,var(--hot) 15%,transparent);color:var(--hot)}
+.card h3{font-size:23px;font-weight:800;font-stretch:88%;line-height:1.1;letter-spacing:-.01em}
+.card p{margin:0;color:var(--muted)}
+.foryou{font-weight:500;color:var(--ink)}
+.foryou::before{content:"→ ";color:var(--c);font-weight:700}
+.src{margin-top:auto;padding-top:8px;font-size:13px;font-weight:600;color:var(--c);display:flex;flex-wrap:wrap;gap:4px 12px}
+.src a{text-decoration:none}
+.src a:hover{text-decoration:underline}
+.stat{font-family:var(--display);font-weight:900;font-stretch:75%;font-size:64px;line-height:.9;color:var(--c);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.stat small{font-size:15px;font-weight:600;font-stretch:100%;color:var(--muted);letter-spacing:0;display:block;margin-top:4px;font-family:var(--body)}
+.wide{grid-column:span 2}
+@media (max-width:700px){.wide{grid-column:auto}}
+.s1{--c:var(--c1)} .s2{--c:var(--c2)} .s3{--c:var(--c3)} .s4{--c:var(--c4)}
+
+/* AI Act strip */
+.dates{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:14px}
+.date{border:1.5px dashed var(--c);border-radius:16px;padding:16px;display:grid;gap:6px;background:var(--card);backdrop-filter:blur(10px)}
+.date strong{font-family:var(--display);font-weight:800;font-size:26px;font-stretch:80%;color:var(--c);font-variant-numeric:tabular-nums}
+.date span{font-size:15px}
+.note{font-size:13px;color:var(--muted);margin:0}
+
+/* Try */
+.try{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.try div{background:linear-gradient(135deg,#4a55e0,#8a3fd1);color:#fff;box-shadow:0 14px 40px -16px rgba(127,140,255,.7);border-radius:18px;padding:22px;display:grid;gap:8px}
+.try b{font-family:var(--display);font-weight:800;font-size:22px;font-stretch:85%}
+.try p{margin:0;opacity:.92}
+footer{font-size:13px;color:var(--muted);display:grid;gap:4px;max-width:80ch}
+footer p{margin:0}
+</style>
+
+<div class="wrap">
+
+<header class="cover">
+  <div class="top"><span class="tag">Edición personal · Javier</span><span class="tag">Nº 44 · 2026</span></div>
+  <h1>Revista <em>IA</em></h1>
+  <div class="sub">
+    <span class="pill ink">Semana del 26 de octubre de 2026</span>
+    <span class="pill">11 noticias</span>
+    <span class="pill">4 min</span>
+  </div>
+</header>
+
+<section class="flash" aria-label="Lo esencial">
+  <span class="tag">Lo esencial en 30 segundos</span>
+  <ol>
+    <li><a class="blk s3" href="#coste"><span class="num">1</span><span class="hl">La IA pide el triple de pruebas que tu médico</span><span class="go">Salud</span></a></li>
+    <li><a class="blk s4" href="#hopkins"><span class="num">2</span><span class="hl">Un empleado sube datos de 3.182 pacientes a un chatbot público</span><span class="go">Privacidad</span></a></li>
+    <li><a class="blk s3" href="#antibioticos"><span class="num">3</span><span class="hl">Antibióticos dentales: los chatbots fallan más fuera del inglés</span><span class="go">Odonto</span></a></li>
+  </ol>
+  <div class="opinion"><span>Opinión</span><p>Los asistentes ya editan documentos enteros y leen tu correo; el riesgo no es lo que escriben, sino lo que les damos a leer. Ningún dato de paciente en una IA sin contrato.</p></div>
+</section>
+
+<section id="herramientas" class="s1">
+  <div class="sh"><i></i><h2>Herramientas</h2></div>
+  <div class="bento">
+    <article class="card wide">
+      <div class="row"><span class="tag">Google · 29 oct</span><span class="chip">También cuentas personales</span></div>
+      <h3>Gemini ya edita archivos dentro del chat</h3>
+      <p>Crea, previsualiza y edita documentos, hojas, presentaciones y PDF sin salir de Gemini; luego los abre en Slides, Sheets o Drive.</p>
+      <p class="foryou">Programas y guías docentes sin copiar y pegar entre apps.</p>
+      <div class="src"><a href="https://workspaceupdates.googleblog.com/2026/10/create-preview-and-edit-files-directly-in-the-Gemini-app.html" target="_blank" rel="noopener">Google ↗</a></div>
+    </article>
+    <article class="card">
+      <div class="row"><span class="tag">Google · 29 oct</span><span class="chip warn">Solo inglés</span></div>
+      <h3>Slides rehace una presentación entera con una orden</h3>
+      <p>Cambia contenido o estilo en todas las diapositivas a la vez; se revierte con el historial. AI Pro, Ultra y Workspace.</p>
+      <p class="foryou">Unificar el estilo de tus clases, cuando llegue en español.</p>
+      <div class="src"><a href="https://workspaceupdates.googleblog.com/2026/10/edit-entire-presentations-with-gemini-in-Google-Slides.html" target="_blank" rel="noopener">Google ↗</a></div>
+    </article>
+    <article class="card">
+      <div class="row"><span class="tag">OpenAI · 27 oct</span><span class="chip">Todos los planes</span></div>
+      <h3>ChatGPT entra en tu correo y calendario de iCloud</h3>
+      <p>Busca correos, resume la bandeja y modifica eventos. No puedo confirmar que esté disponible en la UE.</p>
+      <p class="foryou">No lo conectes si ese correo recibe informes de pacientes.</p>
+      <div class="src"><a href="https://runtimewire.com/article/chatgpt-adds-icloud-mail-calendar-plugins" target="_blank" rel="noopener">Runtime Wire ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<section id="modelos" class="s2">
+  <div class="sh"><i></i><h2>Modelos</h2></div>
+  <div class="bento">
+    <article class="card wide">
+      <div class="row"><span class="tag">OpenAI · 26 oct</span><span class="chip">Plus y superiores</span></div>
+      <div class="stat">16,7 %<small>de errores factuales en la prueba interna de OpenAI (antes, 53,6 %)</small></div>
+      <h3>GPT-6.1 Terra: el modelo del día a día, más barato</h3>
+      <p>Llega a ChatGPT Work y Codex; en la API cuesta la mitad que su antecesor. Cifras de OpenAI, en una prueba propia.</p>
+      <p class="foryou">Pruébalo en tareas de agente; el plan gratuito sigue con GPT-5.6 Luna.</p>
+      <div class="src"><a href="https://decrypt.co/381883/openai-launches-gpt-6-1-terra-half-good-half-price" target="_blank" rel="noopener">Decrypt ↗</a></div>
+    </article>
+    <article class="card">
+      <div class="row"><span class="tag">Google · 28 oct</span><span class="chip warn">Acceso restringido</span></div>
+      <h3>Gemini 4 Carbon, solo para expertos en ciberseguridad</h3>
+      <p>El modelo más potente de Google busca y corrige fallos de software. Sin fecha para el público.</p>
+      <p class="foryou">Nada que probar aún; Argon sigue siendo tu Gemini.</p>
+      <div class="src"><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">Google ↗</a></div>
+    </article>
+    <article class="card">
+      <div class="row"><span class="tag">Mistral · 29 oct</span><span class="chip">Pesos abiertos</span></div>
+      <h3>Mistral libera su modelo de un billón de parámetros</h3>
+      <p>Large 4 se puede descargar y alojar en servidores propios. Entrenado en infraestructura europea, según Mistral.</p>
+      <p class="foryou">Opción europea para tu universidad; en casa, inviable por hardware.</p>
+      <div class="src"><a href="https://mistral.ai/news/mistral-large-4-oss/" target="_blank" rel="noopener">Mistral ↗</a><a href="https://techcrunch.com/2026/10/29/mistral-releases-weights-for-its-trillion-parameter-ai-model-targeting-cybersecurity/" target="_blank" rel="noopener">TechCrunch ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<section id="salud" class="s3">
+  <div class="sh"><i></i><h2>Salud y odonto</h2></div>
+  <div class="bento">
+    <article class="card wide" id="coste">
+      <div class="row"><span class="tag">NEJM AI · 27 oct</span><span class="chip">Estudio</span></div>
+      <div class="stat">3,2×<small>más coste por visita en los planes de 20 modelos que en los de los médicos (314 $ frente a 97 $)</small></div>
+      <h3>La IA pide el triple de pruebas que tu médico</h3>
+      <p>200 notas clínicas públicas de EE. UU., valoradas con tarifas de Medicare. Pedirle ahorro reducía el exceso, pero no lo eliminaba.</p>
+      <p class="foryou">Si un chatbot propone más pruebas, pregúntale por qué.</p>
+      <div class="src"><a href="https://ai.nejm.org/doi/full/10.1056/AIoa2600537" target="_blank" rel="noopener">NEJM AI ↗</a><a href="https://www.techtarget.com/healthtechanalytics/news/366652874/AIs-recommendations-cost-3x-more-than-physician-care-plans" target="_blank" rel="noopener">TechTarget ↗</a></div>
+    </article>
+    <article class="card" id="antibioticos">
+      <div class="row"><span class="tag">Cureus · en PubMed esta semana</span><span class="chip">Odonto</span></div>
+      <div class="stat">95 %<small>de concordancia con las guías en inglés; 77 % en georgiano</small></div>
+      <h3>Antibióticos: los chatbots fallan más fuera del inglés</h3>
+      <p>Claude, ChatGPT y Gemini gratuitos, 20 casos dentales. Acertaron siempre si prescribir; fallaron más en fármaco y pauta.</p>
+      <p class="foryou">Comprueba dosis y duración en la guía, sobre todo si preguntas en español.</p>
+      <div class="src"><a href="https://doi.org/10.7759/cureus.117183" target="_blank" rel="noopener">DOI · vía PubMed ↗</a></div>
+    </article>
+    <article class="card">
+      <div class="row"><span class="tag">Curr Probl Diagn Radiol · en PubMed esta semana</span><span class="chip">Docencia</span></div>
+      <h3>Podcasts de NotebookLM: gustan más, enseñan de forma desigual</h3>
+      <p>Residentes de radiología aprendieron de forma más constante leyendo el artículo; el podcast fue más cómodo, pero sin imágenes ni detalle técnico.</p>
+      <p class="foryou">Úsalo como repaso, no como sustituto del artículo.</p>
+      <div class="src"><a href="https://doi.org/10.1067/j.cpradiol.2026.10.009" target="_blank" rel="noopener">DOI · vía PubMed ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<section id="regulacion" class="s4">
+  <div class="sh"><i></i><h2>Regulación y ética</h2></div>
+  <div class="bento">
+    <article class="card" id="hopkins">
+      <div class="row"><span class="tag">Johns Hopkins · 26 oct</span><span class="chip warn">Privacidad</span></div>
+      <div class="stat">3.182<small>pacientes avisados</small></div>
+      <h3>Un empleado sube datos de pacientes a un chatbot público</h3>
+      <p>Una hoja con nombres, nº de historia y medicación, en una IA que el hospital no había aprobado.</p>
+      <p class="foryou">Pon por escrito qué IA se puede usar en tu clínica.</p>
+      <div class="src"><a href="https://www.beckershospitalreview.com/healthcare-information-technology/ai/johns-hopkins-alerts-3182-patients-after-worker-uploads-data-to-unapproved-ai-tool/" target="_blank" rel="noopener">Becker's ↗</a></div>
+    </article>
+    <article class="card">
+      <div class="row"><span class="tag">OpenAI · 29 oct</span><span class="chip">Ética</span></div>
+      <h3>OpenAI reescribe las reglas de sus modelos en cinco valores</h3>
+      <p>Fidelidad a la intención, minimizar daños, honestidad, autonomía humana y cuidado. Admite que sus modelos aún no lo cumplen del todo.</p>
+      <p class="foryou">Si quieres crítica, pídela expresamente.</p>
+      <div class="src"><a href="https://model-spec.openai.com/2026-10-29.html" target="_blank" rel="noopener">OpenAI ↗</a><a href="https://ai-tldr.dev/releases/openai-model-spec-2026-10-29/" target="_blank" rel="noopener">AI TL;DR ↗</a></div>
+    </article>
+  </div>
+  <span class="tag" style="margin-top:8px">Contexto · RGPD y AI Act</span>
+  <div class="dates">
+    <div class="date"><strong>21 oct 2026</strong><span>El Consejo de la UE pacta su postura sobre el Digital Omnibus: entrenar IA con datos personales por «interés legítimo». No es ley</span></div>
+    <div class="date"><strong>9 nov 2026</strong><span>Cierra la consulta de la Comisión sobre cómo aplicar el AI Act a la IA de uso general</span></div>
+    <div class="date"><strong>2 dic 2026</strong><span>Marcado obligatorio del contenido generado por IA</span></div>
+  </div>
+  <p class="note">Contexto, no noticia de esta semana: <a href="https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/digital-rulebook-council-agrees-position-to-simplify-data-protection-privacy-and-cyber-reporting-rules/" target="_blank" rel="noopener">Consejo de la UE, 21 oct</a> · <a href="https://www.moncloa.com/2026/10/28/rgpd-inteligencia-artificial-entrenar-ia-3457155/" target="_blank" rel="noopener">Moncloa.com, 28 oct</a> · <a href="https://cdt.org/insights/cdt-europes-ai-bulletin-october-2026/" target="_blank" rel="noopener">CDT Europe, 27 oct</a>. Falta negociar con el Parlamento. Esta semana no he encontrado novedades de la AEPD.</p>
+</section>
+
+<section id="probar">
+  <div class="sh" style="--c:var(--accent)"><i></i><h2>Para probar</h2></div>
+  <div class="try">
+    <div><b>Edita un PDF dentro de Gemini</b><p>Sube el programa de una asignatura, sin datos de alumnos, y pídele que reordene los temas.</p></div>
+    <div><b>Test de antibióticos en español</b><p>Plantea a tu asistente 3 urgencias endodónticas y compara su pauta con la guía que enseñas en clase.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>Del 26 de octubre al 2 de noviembre de 2026. Cada noticia está contrastada en su fuente; los artículos se localizaron vía PubMed. Las páginas de OpenAI no se pudieron abrir: GPT-6.1 Terra se verificó en Decrypt y en las notas de versión recopiladas por Releasebot.</p>
+  <p>Descartados por no poder consultarse la fuente primaria: el estudio de Annals of Internal Medicine sobre pruebas innecesarias y el nuevo sistema de OpenAI para vigilar a sus agentes. Fuera por solo EE. UU. o poco útiles: mensajes de texto con «dot» de OpenAI y la salida a bolsa de Anthropic.</p>
+</footer>
+
+</div>
+
+</body></html>

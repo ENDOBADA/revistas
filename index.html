@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revistas de actualización · Endodoncia Badajoz</title>
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f5f8fc; --paper:#ffffff; --ink:#14284a; --muted:#55637a; --line:#dbe3ef;
+    --accent:#2f5d9d; --coral:#f38a6b; --chip:#e3ebf6; --shadow:0 1px 2px rgba(20,30,40,.06),0 6px 20px rgba(20,30,40,.05);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#0f1a2c; --paper:#16243b; --ink:#e8eef7; --muted:#a3b2c8; --line:#2a3b57; --chip:#1f3150; --shadow:none; }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 'Source Sans 3',system-ui,sans-serif}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  header{padding:44px 0 18px;border-bottom:1px solid var(--line)}
+  .kicker{font:600 12px/1 'Source Sans 3',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  h1{font:800 clamp(30px,5vw,46px)/1.05 Lexend,sans-serif;margin:10px 0 8px;letter-spacing:-.02em}
+  .lead{color:var(--muted);margin:0;max-width:640px}
+  .stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px;font-size:14px;color:var(--muted)}
+  .stats b{font:700 20px Lexend,system-ui,sans-serif;color:var(--ink);display:block}
+
+  .bar{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0;border-bottom:1px solid var(--line)}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .tabs{display:inline-flex;background:var(--chip);border-radius:999px;padding:4px}
+  .tabs a{padding:8px 16px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;color:var(--muted)}
+  .tabs a.on{background:var(--paper);color:var(--ink);box-shadow:var(--shadow)}
+  input[type=search]{flex:1;min-width:200px;padding:10px 14px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit}
+  .chips{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+  .chip{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 12px;font:600 13px 'Source Sans 3',system-ui,sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+  .chip i{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .chip[aria-pressed=false]{opacity:.45}
+  .tags{margin-top:8px}
+  .tag{border:none;background:var(--chip);color:var(--muted);border-radius:6px;padding:4px 9px;font:600 12px 'Source Sans 3',system-ui,sans-serif;cursor:pointer}
+  .tag.on{background:var(--ink);color:var(--bg)}
+
+  main{padding:26px 0 70px}
+  .group{margin:0 0 34px}
+  .group h2{font:700 20px Lexend,system-ui,sans-serif;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+  .group h2 .dot{width:12px;height:12px;border-radius:50%}
+  .group p.gdesc{margin:0 0 14px;color:var(--muted);font-size:14px}
+  .count{font:600 13px 'Source Sans 3',system-ui,sans-serif;color:var(--muted)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--c)}
+  .meta{display:flex;justify-content:space-between;gap:8px;font:600 12px 'Source Sans 3',system-ui,sans-serif;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .meta .s{color:var(--c)}
+  .card h3{font:700 17px/1.3 Lexend,system-ui,sans-serif;margin:0}
+  .card h3 a{text-decoration:none}
+  .card h3 a:hover{text-decoration:underline}
+  .per{font-size:13px;color:var(--muted)}
+  .card ul{margin:2px 0 0;padding-left:18px;font-size:14px}
+  .card li{margin:2px 0}
+  .actions{margin-top:auto;padding-top:8px;display:flex;gap:14px;align-items:center;font-size:13px}
+  .btn{background:var(--c);color:#fff;text-decoration:none;padding:7px 14px;border-radius:8px;font-weight:700}
+  .orig{color:var(--muted)}
+  .empty{color:var(--muted);padding:30px 0;text-align:center}
+  footer{border-top:1px solid var(--line);padding:22px 0 40px;color:var(--muted);font-size:13px}
+  .top{background:var(--paper);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:12px;padding-bottom:12px}
+  .lockup{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--accent)}
+  .lockup img{width:40px;height:auto;display:block}
+  .lockup b{display:block;font:600 19px/1.1 Lexend,system-ui,sans-serif}
+  .lockup small{display:block;font-size:11.5px;letter-spacing:.32em;margin-top:2px}
+  .toplinks{display:flex;gap:18px;font-weight:600}
+  .toplinks a{text-decoration:none;color:var(--muted)}
+  .toplinks a:hover{color:var(--accent)}
+  @media (prefers-color-scheme: dark){ .lockup{color:#fff} .lockup img{filter:brightness(0) invert(1)} }
+  h1 span,.kicker{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><a class="lockup" href="https://endodonciabadajoz.blog"><img src="logo.png" alt=""><span><b>Endodoncia</b><small>BADAJOZ</small></span></a><nav class="toplinks"><a href="https://endodonciabadajoz.blog">Blog</a></nav></div></div>
+<header>
+  <div class="wrap">
+    <div class="kicker">Para profesionales de la odontología</div>
+    <h1>Revistas de actualización en endodoncia</h1>
+    <p class="lead">Literatura científica reciente seleccionada y editada por el Dr. Javier Nieto, con aplicación clínica. Por fecha o por tema, con buscador.</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="row">
+      <nav class="tabs" aria-label="Vista">
+        <a href="#fecha" data-v="fecha">Por fecha</a>
+        <a href="#contexto" data-v="contexto">Por contexto</a>
+      </nav>
+      <input type="search" id="q" placeholder="Buscar: endocorona, fisuras, anestesia, Gemini…" aria-label="Buscar">
+    </div>
+    <div class="chips" id="series"></div>
+    <div class="chips tags" id="tags"></div>
+  </div>
+</div>
+
+<main class="wrap" id="out"></main>
+
+<footer>
+  <div class="wrap">Resúmenes elaborados con ayuda de inteligencia artificial a partir de los artículos citados en cada número; no sustituyen la lectura del artículo original. Contenido dirigido a profesionales de la odontología. © Endodoncia Badajoz · <a href="https://endodonciabadajoz.com/">endodonciabadajoz.com</a></div>
+</footer>
+
+<script src="catalogo.js"></script>
+<script>
+(function(){
+  const S = window.SERIES, N = window.NUMEROS.slice();
+  const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const state = { view: "fecha", q: "", series: new Set(Object.keys(S)), tag: null };
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+  const norm = s => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
+  const fmt = d => { const [y,m,dd] = d.split("-").map(Number); return dd + " " + MESES[m-1].slice(0,3) + " " + y; };
+
+  N.sort((a,b) => b.fecha.localeCompare(a.fecha) || b.id.localeCompare(a.id));
+
+  // Estadísticas
+  const fechas = N.map(n => n.fecha).sort();
+  $("stats").innerHTML =
+    `<div><b>${N.length}</b>números</div><div><b>${Object.keys(S).length}</b>series</div>` +
+    `<div><b>${fmt(fechas[0])}</b>primer número</div><div><b>${fmt(fechas[fechas.length-1])}</b>último número</div>`;
+
+  // Chips de serie
+  $("series").innerHTML = Object.entries(S).map(([k,s]) =>
+    `<button class="chip" data-s="${k}" aria-pressed="true"><i style="background:${s.color}"></i>${esc(s.corto)} <span class="count">${N.filter(n=>n.serie===k).length}</span></button>`).join("");
+  $("series").addEventListener("click", e => {
+    const b = e.target.closest("[data-s]"); if(!b) return;
+    const k = b.dataset.s;
+    // Primer clic con todo activo: aislar esa serie. Después, alternar.
+    if (state.series.size === Object.keys(S).length) { state.series = new Set([k]); }
+    else if (state.series.has(k)) { state.series.delete(k); if(!state.series.size) state.series = new Set(Object.keys(S)); }
+    else state.series.add(k);
+    render();
+  });
+
+  // Etiquetas de tema
+  const tagCount = {};
+  N.forEach(n => n.tags.forEach(t => tagCount[t] = (tagCount[t]||0)+1));
+  const tags = Object.keys(tagCount).sort((a,b) => tagCount[b]-tagCount[a] || a.localeCompare(b));
+  $("tags").innerHTML = tags.map(t => `<button class="tag" data-t="${esc(t)}">${esc(t)}</button>`).join("");
+  $("tags").addEventListener("click", e => {
+    const b = e.target.closest("[data-t]"); if(!b) return;
+    state.tag = state.tag === b.dataset.t ? null : b.dataset.t; render();
+  });
+
+  $("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+
+  function match(n){
+    if (!state.series.has(n.serie)) return false;
+    if (state.tag && !n.tags.includes(state.tag)) return false;
+    if (state.q.trim()){
+      const hay = norm([n.titulo,n.periodo,n.numero,S[n.serie].nombre,...n.temas,...n.tags].join(" "));
+      return norm(state.q).split(/\s+/).filter(Boolean).every(w => hay.includes(w));
+    }
+    return true;
+  }
+
+  function card(n){
+    const s = S[n.serie];
+    return `<article class="card" style="--c:${s.color}">
+      <div class="meta"><span class="s">${esc(s.corto)} · ${esc(n.numero)}</span><span>${fmt(n.fecha)}</span></div>
+      <h3><a href="${esc(n.archivo)}">${esc(n.titulo)}</a></h3>
+      <div class="per">${esc(n.periodo)}</div>
+      <ul>${n.temas.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>
+      <div class="actions"><a class="btn" href="${esc(n.archivo)}">Abrir</a>
+        ${n.original ? `<a class="orig" href="${esc(n.original)}" target="_blank" rel="noopener">original en Claude ↗</a>` : ""}</div>
+    </article>`;
+  }
+
+  function render(){
+    document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("on", a.dataset.v === state.view));
+    document.querySelectorAll("#series .chip").forEach(b => b.setAttribute("aria-pressed", state.series.has(b.dataset.s)));
+    document.querySelectorAll("#tags .tag").forEach(b => b.classList.toggle("on", b.dataset.t === state.tag));
+    const list = N.filter(match);
+    if (!list.length){ $("out").innerHTML = `<p class="empty">Ningún número coincide con ese filtro.</p>`; return; }
+    let html = "";
+    if (state.view === "fecha"){
+      const byMonth = {};
+      list.forEach(n => (byMonth[n.fecha.slice(0,7)] ||= []).push(n));
+      Object.keys(byMonth).sort().reverse().forEach(k => {
+        const [y,m] = k.split("-").map(Number);
+        html += `<section class="group"><h2>${MESES[m-1][0].toUpperCase()+MESES[m-1].slice(1)} ${y} <span class="count">${byMonth[k].length} números</span></h2>
+          <div class="grid">${byMonth[k].map(card).join("")}</div></section>`;
+      });
+    } else {
+      Object.keys(S).forEach(k => {
+        const items = list.filter(n => n.serie === k); if(!items.length) return;
+        html += `<section class="group"><h2><span class="dot" style="background:${S[k].color}"></span>${esc(S[k].nombre)} <span class="count">${items.length}</span></h2>
+          <p class="gdesc">${esc(S[k].desc)}</p><div class="grid">${items.map(card).join("")}</div></section>`;
+      });
+    }
+    $("out").innerHTML = html;
+  }
+
+  function route(){ const h = location.hash.slice(1); state.view = h === "contexto" ? "contexto" : "fecha"; render(); }
+  window.addEventListener("hashchange", route);
+  document.querySelector(".tabs").addEventListener("click", e => {
+    const a = e.target.closest("a[data-v]"); if(!a) return;
+    e.preventDefault(); state.view = a.dataset.v;
+    try { history.replaceState(null, "", "#" + a.dataset.v); } catch(_) { location.hash = a.dataset.v; }
+    render();
+  });
+  route();
+})();
+</script>
+</body>
+</html>
