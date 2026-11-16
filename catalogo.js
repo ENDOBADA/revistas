@@ -51,6 +51,12 @@ window.NUMEROS = [
     temas: ["IA generativa en endodoncia", "Anestesia intraósea frente a bloqueo mandibular", "¿Retirar siempre el instrumento fracturado?", "Terapia pulpar vital en dientes maduros"],
     tags: ["IA", "anestesia", "instrumento fracturado", "pulpa vital", "pronóstico"],
     archivo: "numeros/fichas-c.html", artifact: "a8e17ad5-f7b4-4ccd-9d7d-6c8ec5a82fd2" },
+  { id: "fichas-20261116", serie: "fichas", fecha: "2026-11-16", numero: "Semana 16 nov",
+    titulo: "Fichas de endodoncia · semana del 16 de noviembre",
+    periodo: "Entradas en PubMed del 26 de octubre al 16 de noviembre de 2026",
+    temas: ["Láser de diodo previo y mitad de anestésico en pulpitis irreversible", "Consenso sobre caries profunda y terapia pulpar vital", "¿Sellan mejor los selladores biocerámicos?", "Activación del irrigante o concentración de NaOCl en el dolor postoperatorio"],
+    tags: ["anestesia", "pulpa vital", "selladores", "dolor postoperatorio"],
+    archivo: "numeros/fichas-20261116.html", artifact: "93e3581d-bf3f-45af-a7e8-04703221df7d" },
 
   { id: "actual-a", serie: "actual", fecha: "2026-11-09", numero: "9 nov",
     titulo: "Actualización Endo · 9 de noviembre",
@@ -58,6 +64,12 @@ window.NUMEROS = [
     temas: ["Lesión periapical en dientes endodonciados (54 países)", "Endocorona: diseño del margen", "Intrusión en temporales", "Acceso guiado en calcificación postraumática"],
     tags: ["reconstrucción", "endocorona", "traumatología", "IA"],
     archivo: "numeros/actual-a.html", artifact: "4b5e6eec-1427-4eb4-9338-74962b4fe7cc" },
+  { id: "actual-20261116", serie: "actual", fecha: "2026-11-16", numero: "16 nov",
+    titulo: "Actualización Endo · 16 de noviembre",
+    periodo: "Semana del 16 de noviembre de 2026",
+    temas: ["Conservar con endodoncia o sustituir por implante: diez revisiones", "Endocorona con elevación de margen o base de fibra", "Fractura dentoalveolar compleja: la pérdida de hueso predice perder el diente", "IA para lesiones periapicales en CBCT"],
+    tags: ["reconstrucción", "endocorona", "traumatología", "IA"],
+    archivo: "numeros/actual-20261116.html", artifact: "61b7b65b-59fc-4f91-91eb-f9ad72806cd6" },
 
   { id: "ia-b", serie: "ia", fecha: "2026-10-24", numero: "19–24 oct",
     titulo: "Revista IA · semana del 19 de octubre",
@@ -82,5 +94,11 @@ window.NUMEROS = [
     periodo: "2–9 de noviembre de 2026",
     temas: ["ChatGPT Images 2.6", "IA y lesiones periapicales frente a radiografía 2D", "Escribas digitales en consulta"],
     tags: ["herramientas", "modelos", "odontología", "regulación"],
-    archivo: "numeros/ia-e.html", artifact: "b41060c0-7cf9-46d4-a4ae-255273689937" }
+    archivo: "numeros/ia-e.html", artifact: "b41060c0-7cf9-46d4-a4ae-255273689937" },
+  { id: "ia-20261116", serie: "ia", fecha: "2026-11-16", numero: "9–16 nov",
+    titulo: "Revista IA · semana del 9 de noviembre",
+    periodo: "9–16 de noviembre de 2026",
+    temas: ["Claude entra en las reuniones de Google Meet", "Gemini en Gmail, activado por defecto", "Claude Fable 5.2", "Los chatbots ven la endodoncia, pero no la lesión"],
+    tags: ["herramientas", "modelos", "odontología", "regulación"],
+    archivo: "numeros/ia-20261116.html", artifact: "6b5cb063-2c0e-4ef9-8b67-77d90acbc43b" }
 ];
