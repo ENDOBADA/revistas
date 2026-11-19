@@ -72,6 +72,20 @@
   .toplinks a:hover{color:var(--accent)}
   @media (prefers-color-scheme: dark){ .lockup{color:#fff} .lockup img{filter:brightness(0) invert(1)} }
   h1 span,.kicker{color:var(--accent)}
+  .ed{margin:0 0 34px;scroll-margin-top:150px}
+  .edh{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 14px;padding-bottom:10px;border-bottom:2px solid var(--line)}
+  .edn{font:800 30px/1 Lexend,system-ui,sans-serif;color:var(--accent);letter-spacing:-.02em}
+  .edf{display:flex;flex-direction:column;line-height:1.25}
+  .edf b{font:700 17px Lexend,system-ui,sans-serif}
+  .edf span{font-size:13px;color:var(--muted)}
+  .leer{margin-left:auto;border:1.5px solid var(--accent);background:transparent;color:var(--accent);border-radius:999px;padding:8px 16px;font:700 14px 'Source Sans 3',system-ui,sans-serif;cursor:pointer}
+  .leer[aria-pressed=true]{background:#2f7d4f;border-color:#2f7d4f;color:#fff}
+  .ed.leido .grid{opacity:.6}
+  .nuevo{background:var(--coral);color:#fff;border-radius:6px;padding:3px 8px;font:700 11px 'Source Sans 3',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase}
+  .badge-leido{color:#2f7d4f;font-weight:700}
+  @media (max-width:640px){.bar{position:static}}
+  #ocultar{font-size:13px;opacity:1}
+  #ocultar[aria-pressed=true]{background:var(--ink);color:var(--bg)}
 </style>
 </head>
 <body>
@@ -80,7 +94,7 @@
   <div class="wrap">
     <div class="kicker">Para profesionales de la odontología</div>
     <h1>Revistas de actualización en endodoncia</h1>
-    <p class="lead">Literatura científica reciente seleccionada y editada por el Dr. Javier Nieto, con aplicación clínica. Por fecha o por tema, con buscador.</p>
+    <p class="lead">Literatura científica reciente seleccionada y editada por el Dr. Javier Nieto, con aplicación clínica. Un número cada semana: márquelo como leído para saber por dónde va.</p>
     <div class="stats" id="stats"></div>
   </div>
 </header>
@@ -89,9 +103,10 @@
   <div class="wrap">
     <div class="row">
       <nav class="tabs" aria-label="Vista">
-        <a href="#fecha" data-v="fecha">Por fecha</a>
+        <a href="#numero" data-v="numero">Por número</a>
         <a href="#contexto" data-v="contexto">Por contexto</a>
       </nav>
+      <button class="chip" id="ocultar" aria-pressed="false">Ocultar leídos</button>
       <input type="search" id="q" placeholder="Buscar: endocorona, fisuras, anestesia, Gemini…" aria-label="Buscar">
     </div>
     <div class="chips" id="series"></div>
@@ -105,106 +120,164 @@
   <div class="wrap">Resúmenes elaborados con ayuda de inteligencia artificial a partir de los artículos citados en cada número; no sustituyen la lectura del artículo original. Contenido dirigido a profesionales de la odontología. © Endodoncia Badajoz · <a href="https://endodonciabadajoz.com/">endodonciabadajoz.com</a></div>
 </footer>
 
-<script src="catalogo.js"></script>
 <script>
 (function(){
-  const S = window.SERIES, N = window.NUMEROS.slice();
   const MESES = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
-  const state = { view: "fecha", q: "", series: new Set(Object.keys(S)), tag: null };
   const $ = id => document.getElementById(id);
   const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const norm = s => String(s).toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");
   const fmt = d => { const [y,m,dd] = d.split("-").map(Number); return dd + " " + MESES[m-1].slice(0,3) + " " + y; };
+  const fmtLargo = d => { const [y,m,dd] = d.split("-").map(Number); return dd + " de " + MESES[m-1] + " de " + y; };
 
-  N.sort((a,b) => b.fecha.localeCompare(a.fecha) || b.id.localeCompare(a.id));
+  // «Leído» se guarda solo en este navegador (sin registro). Si no hay almacenamiento, funciona en memoria.
+  const CLAVE = "hemeroteca-leidos";
+  let leidos = new Set();
+  try { leidos = new Set(JSON.parse(localStorage.getItem(CLAVE) || "[]")); } catch(_) {}
+  const guardar = () => { try { localStorage.setItem(CLAVE, JSON.stringify([...leidos])); } catch(_) {} };
+  let ocultar = false;
+  try { ocultar = localStorage.getItem(CLAVE + "-ocultar") === "1"; } catch(_) {}
 
-  // Estadísticas
-  const fechas = N.map(n => n.fecha).sort();
-  $("stats").innerHTML =
-    `<div><b>${N.length}</b>números</div><div><b>${Object.keys(S).length}</b>series</div>` +
-    `<div><b>${fmt(fechas[0])}</b>primer número</div><div><b>${fmt(fechas[fechas.length-1])}</b>último número</div>`;
+  fetch("catalogo.json", { cache: "no-cache" })
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(iniciar)
+    .catch(() => { $("out").innerHTML = `<p class="empty">No se ha podido cargar el catálogo. Recargue la página.</p>`; });
 
-  // Chips de serie
-  $("series").innerHTML = Object.entries(S).map(([k,s]) =>
-    `<button class="chip" data-s="${k}" aria-pressed="true"><i style="background:${s.color}"></i>${esc(s.corto)} <span class="count">${N.filter(n=>n.serie===k).length}</span></button>`).join("");
-  $("series").addEventListener("click", e => {
-    const b = e.target.closest("[data-s]"); if(!b) return;
-    const k = b.dataset.s;
-    // Primer clic con todo activo: aislar esa serie. Después, alternar.
-    if (state.series.size === Object.keys(S).length) { state.series = new Set([k]); }
-    else if (state.series.has(k)) { state.series.delete(k); if(!state.series.size) state.series = new Set(Object.keys(S)); }
-    else state.series.add(k);
-    render();
-  });
+  function iniciar(cat){
+    const S = cat.series, N = cat.numeros.slice();
+    const ED = cat.ediciones.slice().sort((a,b) => b.n - a.n);
+    const edDe = n => ED.find(e => e.n === n.edicion);
+    const state = { view: "numero", q: "", series: new Set(Object.keys(S)), tag: null };
 
-  // Etiquetas de tema
-  const tagCount = {};
-  N.forEach(n => n.tags.forEach(t => tagCount[t] = (tagCount[t]||0)+1));
-  const tags = Object.keys(tagCount).sort((a,b) => tagCount[b]-tagCount[a] || a.localeCompare(b));
-  $("tags").innerHTML = tags.map(t => `<button class="tag" data-t="${esc(t)}">${esc(t)}</button>`).join("");
-  $("tags").addEventListener("click", e => {
-    const b = e.target.closest("[data-t]"); if(!b) return;
-    state.tag = state.tag === b.dataset.t ? null : b.dataset.t; render();
-  });
+    N.sort((a,b) => b.fecha.localeCompare(a.fecha) || b.id.localeCompare(a.id));
 
-  $("q").addEventListener("input", e => { state.q = e.target.value; render(); });
-
-  function match(n){
-    if (!state.series.has(n.serie)) return false;
-    if (state.tag && !n.tags.includes(state.tag)) return false;
-    if (state.q.trim()){
-      const hay = norm([n.titulo,n.periodo,n.numero,S[n.serie].nombre,...n.temas,...n.tags].join(" "));
-      return norm(state.q).split(/\s+/).filter(Boolean).every(w => hay.includes(w));
+    function stats(){
+      const leidosAqui = ED.filter(e => leidos.has(e.n)).length;
+      $("stats").innerHTML =
+        `<div><b>Nº ${ED[0].n}</b>último número · ${fmt(ED[0].fecha)}</div>` +
+        `<div><b>${N.length}</b>revistas</div><div><b>${Object.keys(S).length}</b>series</div>` +
+        `<div><b>${leidosAqui} de ${ED.length}</b>números leídos en este dispositivo</div>`;
     }
-    return true;
-  }
 
-  function card(n){
-    const s = S[n.serie];
-    return `<article class="card" style="--c:${s.color}">
-      <div class="meta"><span class="s">${esc(s.corto)} · ${esc(n.numero)}</span><span>${fmt(n.fecha)}</span></div>
-      <h3><a href="${esc(n.archivo)}">${esc(n.titulo)}</a></h3>
-      <div class="per">${esc(n.periodo)}</div>
-      <ul>${n.temas.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>
-      <div class="actions"><a class="btn" href="${esc(n.archivo)}">Abrir</a>
-        ${n.original ? `<a class="orig" href="${esc(n.original)}" target="_blank" rel="noopener">original en Claude ↗</a>` : ""}</div>
-    </article>`;
-  }
+    // Chips de serie
+    $("series").innerHTML = Object.entries(S).map(([k,s]) =>
+      `<button class="chip" data-s="${k}" aria-pressed="true"><i style="background:${s.color}"></i>${esc(s.corto)} <span class="count">${N.filter(n=>n.serie===k).length}</span></button>`).join("");
+    $("series").addEventListener("click", e => {
+      const b = e.target.closest("[data-s]"); if(!b) return;
+      const k = b.dataset.s;
+      if (state.series.size === Object.keys(S).length) { state.series = new Set([k]); }
+      else if (state.series.has(k)) { state.series.delete(k); if(!state.series.size) state.series = new Set(Object.keys(S)); }
+      else state.series.add(k);
+      render();
+    });
 
-  function render(){
-    document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("on", a.dataset.v === state.view));
-    document.querySelectorAll("#series .chip").forEach(b => b.setAttribute("aria-pressed", state.series.has(b.dataset.s)));
-    document.querySelectorAll("#tags .tag").forEach(b => b.classList.toggle("on", b.dataset.t === state.tag));
-    const list = N.filter(match);
-    if (!list.length){ $("out").innerHTML = `<p class="empty">Ningún número coincide con ese filtro.</p>`; return; }
-    let html = "";
-    if (state.view === "fecha"){
-      const byMonth = {};
-      list.forEach(n => (byMonth[n.fecha.slice(0,7)] ||= []).push(n));
-      Object.keys(byMonth).sort().reverse().forEach(k => {
-        const [y,m] = k.split("-").map(Number);
-        html += `<section class="group"><h2>${MESES[m-1][0].toUpperCase()+MESES[m-1].slice(1)} ${y} <span class="count">${byMonth[k].length} números</span></h2>
-          <div class="grid">${byMonth[k].map(card).join("")}</div></section>`;
-      });
-    } else {
-      Object.keys(S).forEach(k => {
-        const items = list.filter(n => n.serie === k); if(!items.length) return;
-        html += `<section class="group"><h2><span class="dot" style="background:${S[k].color}"></span>${esc(S[k].nombre)} <span class="count">${items.length}</span></h2>
-          <p class="gdesc">${esc(S[k].desc)}</p><div class="grid">${items.map(card).join("")}</div></section>`;
-      });
+    // Etiquetas de tema
+    const tagCount = {};
+    N.forEach(n => n.tags.forEach(t => tagCount[t] = (tagCount[t]||0)+1));
+    const tags = Object.keys(tagCount).sort((a,b) => tagCount[b]-tagCount[a] || a.localeCompare(b));
+    $("tags").innerHTML = tags.map(t => `<button class="tag" data-t="${esc(t)}">${esc(t)}</button>`).join("");
+    $("tags").addEventListener("click", e => {
+      const b = e.target.closest("[data-t]"); if(!b) return;
+      state.tag = state.tag === b.dataset.t ? null : b.dataset.t; render();
+    });
+
+    $("q").addEventListener("input", e => { state.q = e.target.value; render(); });
+    $("ocultar").addEventListener("click", () => {
+      ocultar = !ocultar;
+      try { localStorage.setItem(CLAVE + "-ocultar", ocultar ? "1" : "0"); } catch(_) {}
+      render();
+    });
+
+    // Marcar como leído
+    $("out").addEventListener("click", e => {
+      const b = e.target.closest("[data-leer]"); if(!b) return;
+      const n = Number(b.dataset.leer);
+      leidos.has(n) ? leidos.delete(n) : leidos.add(n);
+      guardar(); render();
+    });
+
+    function match(n){
+      if (!state.series.has(n.serie)) return false;
+      if (state.tag && !n.tags.includes(state.tag)) return false;
+      if (ocultar && leidos.has(n.edicion)) return false;
+      if (state.q.trim()){
+        const e = edDe(n);
+        const hay = norm([n.titulo,n.periodo,n.numero,S[n.serie].nombre,"Nº " + n.edicion, e ? fmtLargo(e.fecha) : "",...n.temas,...n.tags].join(" "));
+        return norm(state.q).split(/\s+/).filter(Boolean).every(w => hay.includes(w));
+      }
+      return true;
     }
-    $("out").innerHTML = html;
-  }
 
-  function route(){ const h = location.hash.slice(1); state.view = h === "contexto" ? "contexto" : "fecha"; render(); }
-  window.addEventListener("hashchange", route);
-  document.querySelector(".tabs").addEventListener("click", e => {
-    const a = e.target.closest("a[data-v]"); if(!a) return;
-    e.preventDefault(); state.view = a.dataset.v;
-    try { history.replaceState(null, "", "#" + a.dataset.v); } catch(_) { location.hash = a.dataset.v; }
-    render();
-  });
-  route();
+    function card(n, conEdicion){
+      const s = S[n.serie];
+      const leido = leidos.has(n.edicion);
+      return `<article class="card" style="--c:${s.color}">
+        <div class="meta"><span class="s">${esc(s.corto)} · ${esc(n.numero)}</span><span>${fmt(n.fecha)}</span></div>
+        <h3><a href="${esc(n.archivo)}">${esc(n.titulo)}</a></h3>
+        <div class="per">${esc(n.periodo)}</div>
+        <ul>${n.temas.map(t=>`<li>${esc(t)}</li>`).join("")}</ul>
+        <div class="actions"><a class="btn" href="${esc(n.archivo)}">Abrir</a>
+          ${conEdicion ? `<a class="orig" href="#n${n.edicion}" data-ir="${n.edicion}">Nº ${n.edicion}</a>` : ""}
+          ${conEdicion && leido ? `<span class="badge-leido">✓ Leído</span>` : ""}</div>
+      </article>`;
+    }
+
+    function render(){
+      document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("on", a.dataset.v === state.view));
+      document.querySelectorAll("#series .chip").forEach(b => b.setAttribute("aria-pressed", state.series.has(b.dataset.s)));
+      document.querySelectorAll("#tags .tag").forEach(b => b.classList.toggle("on", b.dataset.t === state.tag));
+      $("ocultar").setAttribute("aria-pressed", ocultar);
+      stats();
+      const list = N.filter(match);
+      if (!list.length){
+        $("out").innerHTML = `<p class="empty">${ocultar && leidos.size ? "Ha leído todos los números que coinciden. Pulse «Ocultar leídos» para verlos de nuevo." : "Ningún número coincide con ese filtro."}</p>`;
+        return;
+      }
+      let html = "";
+      if (state.view === "numero"){
+        ED.forEach((e, i) => {
+          const items = list.filter(n => n.edicion === e.n); if(!items.length) return;
+          const leido = leidos.has(e.n);
+          html += `<section class="ed${leido ? " leido" : ""}" id="n${e.n}">
+            <div class="edh"><span class="edn">Nº ${e.n}</span>
+              <span class="edf"><b>Semana del ${fmtLargo(e.fecha)}</b><span>${items.length} ${items.length === 1 ? "revista" : "revistas"}</span></span>
+              ${i === 0 && !leido ? `<span class="nuevo">Último</span>` : ""}
+              <button class="leer" data-leer="${e.n}" aria-pressed="${leido}">${leido ? "✓ Leído" : "Marcar como leído"}</button></div>
+            <div class="grid">${items.map(n => card(n, false)).join("")}</div></section>`;
+        });
+      } else {
+        Object.keys(S).forEach(k => {
+          const items = list.filter(n => n.serie === k); if(!items.length) return;
+          html += `<section class="group"><h2><span class="dot" style="background:${S[k].color}"></span>${esc(S[k].nombre)} <span class="count">${items.length}</span></h2>
+            <p class="gdesc">${esc(S[k].desc)}</p><div class="grid">${items.map(n => card(n, true)).join("")}</div></section>`;
+        });
+      }
+      $("out").innerHTML = html;
+    }
+
+    // Desde la vista por contexto, «Nº X» lleva a ese número
+    $("out").addEventListener("click", e => {
+      const a = e.target.closest("[data-ir]"); if(!a) return;
+      e.preventDefault(); state.view = "numero";
+      try { history.replaceState(null, "", "#numero"); } catch(_) {}
+      render();
+      const el = document.getElementById("n" + a.dataset.ir); if (el) el.scrollIntoView();
+    });
+
+    function route(){
+      const h = location.hash.slice(1);
+      state.view = h === "contexto" ? "contexto" : "numero";
+      render();
+      if (/^n\d+$/.test(h)) { const el = document.getElementById(h); if (el) el.scrollIntoView(); }
+    }
+    window.addEventListener("hashchange", route);
+    document.querySelector(".tabs").addEventListener("click", e => {
+      const a = e.target.closest("a[data-v]"); if(!a) return;
+      e.preventDefault(); state.view = a.dataset.v;
+      try { history.replaceState(null, "", "#" + a.dataset.v); } catch(_) { location.hash = a.dataset.v; }
+      render();
+    });
+    route();
+  }
 })();
 </script>
 </body>

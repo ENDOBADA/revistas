@@ -1,0 +1,368 @@
+{
+  "_instrucciones": "Catálogo de la hemeroteca. Para añadir un número: copia su HTML en numeros/ y añade su entrada en 'numeros'. fecha = día en que se editó (AAAA-MM-DD). edicion = número semanal de la hemeroteca: la semana va de lunes a domingo y su fecha es la del lunes; si ese lunes ya está en 'ediciones', usa su n; si no, añade {n: último + 1, fecha: lunes}. Los slugs de 'excluidos' no se añaden nunca.",
+  "excluidos": [
+    "ab53db74-21d9-49be-8fe4-7a3812917960"
+  ],
+  "series": {
+    "revista": {
+      "nombre": "Revista endodoncistas.es",
+      "corto": "endodoncistas.es",
+      "color": "#0f6e8c",
+      "desc": "Tres artículos del JOE o el IEJ por número, contados para la consulta."
+    },
+    "fichas": {
+      "nombre": "Fichas semanales de endodoncia",
+      "corto": "Fichas semanales",
+      "color": "#2f7d4f",
+      "desc": "Novedades de J Endod, Int Endod J y PubMed, con veredicto clínico y repaso."
+    },
+    "actual": {
+      "nombre": "Actualización Endo",
+      "corto": "Actualización Endo",
+      "color": "#b5651d",
+      "desc": "Reconstrucción del diente endodonciado, traumatología dental e IA en odontología."
+    },
+    "ia": {
+      "nombre": "Revista IA",
+      "corto": "Revista IA",
+      "color": "#6b4fa3",
+      "desc": "Novedades semanales de IA: herramientas, modelos, salud/odontología y regulación."
+    }
+  },
+  "ediciones": [
+    {
+      "n": 1,
+      "fecha": "2026-10-19"
+    },
+    {
+      "n": 2,
+      "fecha": "2026-10-26"
+    },
+    {
+      "n": 3,
+      "fecha": "2026-11-02"
+    },
+    {
+      "n": 4,
+      "fecha": "2026-11-09"
+    },
+    {
+      "n": 5,
+      "fecha": "2026-11-16"
+    }
+  ],
+  "numeros": [
+    {
+      "id": "endo-01",
+      "serie": "revista",
+      "fecha": "2026-10-22",
+      "numero": "Nº 1",
+      "titulo": "Lo que el JOE publicó este mes, contado para la consulta",
+      "periodo": "Artículos del JOE, octubre 2026",
+      "temas": [
+        "Dientes fisurados tras endodoncia",
+        "Solventes en retratamiento",
+        "ChatGPT y Gemini frente al endodoncista"
+      ],
+      "tags": [
+        "fisuras",
+        "retratamiento",
+        "IA"
+      ],
+      "archivo": "numeros/endo-01.html",
+      "artifact": "9602c4a8-ea78-4e51-b14b-0102a6af5c02",
+      "edicion": 1
+    },
+    {
+      "id": "endo-02",
+      "serie": "revista",
+      "fecha": "2026-10-22",
+      "numero": "Nº 2",
+      "titulo": "Llegar, sellar y reconstruir: lo nuevo del IEJ",
+      "periodo": "Artículos del IEJ · número fechado en noviembre 2026",
+      "temas": [
+        "Composite directo o endocorona en molares muy destruidos",
+        "Lima fina para conductos estrechos",
+        "Lo que el sellador no elimina"
+      ],
+      "tags": [
+        "reconstrucción",
+        "endocorona",
+        "instrumentación",
+        "selladores"
+      ],
+      "archivo": "numeros/endo-02.html",
+      "artifact": "f6087d2e-d13b-4d77-b2da-7535718ee804",
+      "edicion": 1
+    },
+    {
+      "id": "endo-03",
+      "serie": "revista",
+      "fecha": "2026-10-26",
+      "numero": "Nº 3",
+      "titulo": "Grietas, dolor y algoritmos: lo nuevo del JOE",
+      "periodo": "Artículos del JOE, octubre 2026",
+      "temas": [
+        "Supervivencia de dientes agrietados endodonciados",
+        "Ibuprofeno y paracetamol: pautado o a demanda",
+        "ChatGPT y Gemini ante 645 dientes"
+      ],
+      "tags": [
+        "fisuras",
+        "dolor postoperatorio",
+        "IA"
+      ],
+      "archivo": "numeros/endo-03.html",
+      "artifact": "0b1410e1-746f-4d3e-8c76-f017008e844b",
+      "edicion": 2
+    },
+    {
+      "id": "fichas-a",
+      "serie": "fichas",
+      "fecha": "2026-10-26",
+      "numero": "Semana 26 oct",
+      "titulo": "Resumen semanal de endodoncia",
+      "periodo": "Semana del 26 de octubre de 2026",
+      "temas": [
+        "Dientes agrietados a largo plazo",
+        "Analgesia tras periodontitis apical sintomática",
+        "Revitalización 10 años después (ESE)",
+        "NiTi en reciprocación adaptativa"
+      ],
+      "tags": [
+        "fisuras",
+        "dolor postoperatorio",
+        "regeneración",
+        "instrumentación",
+        "microcirugía"
+      ],
+      "archivo": "numeros/fichas-a.html",
+      "artifact": "5ee6e1cd-8768-4113-8041-6a4472c49a70",
+      "edicion": 2
+    },
+    {
+      "id": "fichas-b",
+      "serie": "fichas",
+      "fecha": "2026-11-02",
+      "numero": "Semana 2 nov",
+      "titulo": "Fichas de endodoncia · semana del 2 de noviembre",
+      "periodo": "Artículos del 13 al 30 de octubre de 2026",
+      "temas": [
+        "Factores de lesión periapical en 54 países",
+        "Ampliación apical en molares inferiores"
+      ],
+      "tags": [
+        "periodontitis apical",
+        "pronóstico",
+        "preparación apical"
+      ],
+      "archivo": "numeros/fichas-b.html",
+      "artifact": "71252b11-ce75-46af-b5a6-6ad8cdb6b82d",
+      "edicion": 3
+    },
+    {
+      "id": "fichas-c",
+      "serie": "fichas",
+      "fecha": "2026-11-09",
+      "numero": "Semana 9 nov",
+      "titulo": "Fichas de endodoncia · semana del 9 de noviembre",
+      "periodo": "Semana del 9 de noviembre de 2026",
+      "temas": [
+        "IA generativa en endodoncia",
+        "Anestesia intraósea frente a bloqueo mandibular",
+        "¿Retirar siempre el instrumento fracturado?",
+        "Terapia pulpar vital en dientes maduros"
+      ],
+      "tags": [
+        "IA",
+        "anestesia",
+        "instrumento fracturado",
+        "pulpa vital",
+        "pronóstico"
+      ],
+      "archivo": "numeros/fichas-c.html",
+      "artifact": "a8e17ad5-f7b4-4ccd-9d7d-6c8ec5a82fd2",
+      "edicion": 4
+    },
+    {
+      "id": "fichas-20261116",
+      "serie": "fichas",
+      "fecha": "2026-11-16",
+      "numero": "Semana 16 nov",
+      "titulo": "Fichas de endodoncia · semana del 16 de noviembre",
+      "periodo": "Entradas en PubMed del 26 de octubre al 16 de noviembre de 2026",
+      "temas": [
+        "Láser de diodo previo y mitad de anestésico en pulpitis irreversible",
+        "Consenso sobre caries profunda y terapia pulpar vital",
+        "¿Sellan mejor los selladores biocerámicos?",
+        "Activación del irrigante o concentración de NaOCl en el dolor postoperatorio"
+      ],
+      "tags": [
+        "anestesia",
+        "pulpa vital",
+        "selladores",
+        "dolor postoperatorio"
+      ],
+      "archivo": "numeros/fichas-20261116.html",
+      "artifact": "93e3581d-bf3f-45af-a7e8-04703221df7d",
+      "edicion": 5
+    },
+    {
+      "id": "actual-a",
+      "serie": "actual",
+      "fecha": "2026-11-09",
+      "numero": "Nº 1",
+      "titulo": "Actualización Endo · 9 de noviembre",
+      "periodo": "Semana del 9 de noviembre de 2026",
+      "temas": [
+        "Lesión periapical en dientes endodonciados (54 países)",
+        "Endocorona: diseño del margen",
+        "Intrusión en temporales",
+        "Acceso guiado en calcificación postraumática"
+      ],
+      "tags": [
+        "reconstrucción",
+        "endocorona",
+        "traumatología",
+        "IA"
+      ],
+      "archivo": "numeros/actual-a.html",
+      "artifact": "4b5e6eec-1427-4eb4-9338-74962b4fe7cc",
+      "edicion": 4
+    },
+    {
+      "id": "actual-20261116",
+      "serie": "actual",
+      "fecha": "2026-11-16",
+      "numero": "Nº 2",
+      "titulo": "Actualización Endo · 16 de noviembre",
+      "periodo": "Semana del 16 de noviembre de 2026",
+      "temas": [
+        "Conservar con endodoncia o sustituir por implante: diez revisiones",
+        "Endocorona con elevación de margen o base de fibra",
+        "Fractura dentoalveolar compleja: la pérdida de hueso predice perder el diente",
+        "IA para lesiones periapicales en CBCT"
+      ],
+      "tags": [
+        "reconstrucción",
+        "endocorona",
+        "traumatología",
+        "IA"
+      ],
+      "archivo": "numeros/actual-20261116.html",
+      "artifact": "61b7b65b-59fc-4f91-91eb-f9ad72806cd6",
+      "edicion": 5
+    },
+    {
+      "id": "ia-b",
+      "serie": "ia",
+      "fecha": "2026-10-24",
+      "numero": "19–24 oct",
+      "titulo": "Revista IA · semana del 19 de octubre",
+      "periodo": "19–24 de octubre de 2026",
+      "temas": [
+        "Claude Duet, un agente en segundo plano",
+        "Gemini 4 Argon",
+        "Los chatbots no leen radiografías"
+      ],
+      "tags": [
+        "herramientas",
+        "modelos",
+        "odontología",
+        "regulación"
+      ],
+      "archivo": "numeros/ia-b.html",
+      "artifact": "bf3ebf88-4fea-4ae4-bfdb-796340c68ee8",
+      "edicion": 1
+    },
+    {
+      "id": "ia-c",
+      "serie": "ia",
+      "fecha": "2026-10-26",
+      "numero": "19–26 oct",
+      "titulo": "Revista IA · semana del 26 de octubre",
+      "periodo": "19–26 de octubre de 2026",
+      "temas": [
+        "Canva genera imágenes",
+        "Curvatura del conducto medida en un segundo",
+        "Suecia bloquea ChatGPT y Claude"
+      ],
+      "tags": [
+        "herramientas",
+        "modelos",
+        "odontología",
+        "regulación"
+      ],
+      "archivo": "numeros/ia-c.html",
+      "artifact": "881a14cb-c3f4-4988-aae3-4b0d2c38ab5a",
+      "edicion": 2
+    },
+    {
+      "id": "ia-d",
+      "serie": "ia",
+      "fecha": "2026-11-02",
+      "numero": "26 oct–2 nov",
+      "titulo": "Revista IA · semana del 26 de octubre al 2 de noviembre",
+      "periodo": "26 de octubre – 2 de noviembre de 2026",
+      "temas": [
+        "Slides rehace presentaciones con una orden",
+        "Mistral libera su modelo grande",
+        "Antibióticos: chatbots fallan fuera del inglés"
+      ],
+      "tags": [
+        "herramientas",
+        "modelos",
+        "salud",
+        "regulación"
+      ],
+      "archivo": "numeros/ia-d.html",
+      "artifact": "1195bf12-ce13-4e6f-82eb-d9dbaa25ca77",
+      "edicion": 3
+    },
+    {
+      "id": "ia-e",
+      "serie": "ia",
+      "fecha": "2026-11-09",
+      "numero": "2–9 nov",
+      "titulo": "Revista IA · semana del 2 de noviembre",
+      "periodo": "2–9 de noviembre de 2026",
+      "temas": [
+        "ChatGPT Images 2.6",
+        "IA y lesiones periapicales frente a radiografía 2D",
+        "Escribas digitales en consulta"
+      ],
+      "tags": [
+        "herramientas",
+        "modelos",
+        "odontología",
+        "regulación"
+      ],
+      "archivo": "numeros/ia-e.html",
+      "artifact": "b41060c0-7cf9-46d4-a4ae-255273689937",
+      "edicion": 4
+    },
+    {
+      "id": "ia-20261116",
+      "serie": "ia",
+      "fecha": "2026-11-16",
+      "numero": "9–16 nov",
+      "titulo": "Revista IA · semana del 9 de noviembre",
+      "periodo": "9–16 de noviembre de 2026",
+      "temas": [
+        "Claude entra en las reuniones de Google Meet",
+        "Gemini en Gmail, activado por defecto",
+        "Claude Fable 5.2",
+        "Los chatbots ven la endodoncia, pero no la lesión"
+      ],
+      "tags": [
+        "herramientas",
+        "modelos",
+        "odontología",
+        "regulación"
+      ],
+      "archivo": "numeros/ia-20261116.html",
+      "artifact": "6b5cb063-2c0e-4ef9-8b67-77d90acbc43b",
+      "edicion": 5
+    }
+  ]
+}
