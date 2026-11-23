@@ -49,6 +49,10 @@
     {
       "n": 5,
       "fecha": "2026-11-16"
+    },
+    {
+      "n": 6,
+      "fecha": "2026-11-23"
     }
   ],
   "numeros": [
@@ -363,6 +367,29 @@
       "archivo": "numeros/ia-20261116.html",
       "artifact": "6b5cb063-2c0e-4ef9-8b67-77d90acbc43b",
       "edicion": 5
+    },
+    {
+      "id": "ia-20261123",
+      "serie": "ia",
+      "fecha": "2026-11-23",
+      "numero": "16–23 nov",
+      "titulo": "Revista IA · semana del 16 de noviembre",
+      "periodo": "16–23 de noviembre de 2026",
+      "temas": [
+        "Gemini guardará dos meses los chats que creías temporales",
+        "OpenAI estrena GPT-6.2 Astra y Sol",
+        "Claude controla el ordenador, en beta para equipos",
+        "Una IA intenta pronosticar tus endodoncias con la radiografía previa… y aún no llega"
+      ],
+      "tags": [
+        "herramientas",
+        "modelos",
+        "odontología",
+        "regulación"
+      ],
+      "archivo": "numeros/ia-20261123.html",
+      "artifact": "dafe7501-cd1d-487c-bff9-23007337b0c4",
+      "edicion": 6
     }
   ]
 }
