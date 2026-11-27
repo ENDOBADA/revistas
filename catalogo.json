@@ -390,6 +390,29 @@
       "archivo": "numeros/ia-20261123.html",
       "artifact": "dafe7501-cd1d-487c-bff9-23007337b0c4",
       "edicion": 6
+    },
+    {
+      "id": "fichas-20261123",
+      "serie": "fichas",
+      "fecha": "2026-11-23",
+      "numero": "Semana 23 nov",
+      "titulo": "Fichas de endodoncia · semana del 23 de noviembre",
+      "periodo": "Lo publicado del 16 al 23 de noviembre de 2026",
+      "temas": [
+        "Supervivencia ≠ curación: +8,8 puntos de media, muy variable",
+        "Especialista: +5,3 años de diente por unos 150 €",
+        "PRP y PRF no mejoran la regeneración frente al coágulo",
+        "Láser en terapia pulpar vital: ventaja pequeña, evidencia débil"
+      ],
+      "tags": [
+        "pronóstico",
+        "regeneración",
+        "pulpa vital",
+        "periodontitis apical"
+      ],
+      "archivo": "numeros/fichas-20261123.html",
+      "artifact": "f47e2154-c594-49b9-a4c4-e6c4815e6819",
+      "edicion": 6
     }
   ]
 }
